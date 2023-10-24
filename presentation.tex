@@ -6,6 +6,7 @@
 \usepackage{mwe}% for example pictures
 \usepackage{siunitx}
 \usepackage{hyperref}
+\usepackage{listings}
 
 \usecolortheme{spruce}
 \useoutertheme{infolines}
@@ -67,15 +68,15 @@
 \section{Content}
 \begin{frame}{What I want to present to you}
 \begin{itemize}
-    \item RAM model and Heap
+    \item Memory layout
     \item Introduction to GC in Java 
     \item Serial GC 
     \item G1 GC 
-    \item others...
+    \item CMS 
 \end{itemize}
 \end{frame}
 
-\section{Method}
+\section{Memory layout}
 \begin{frame}[label=Rocky]{There you can also separate the page}
 \begin{figure}
  \begin{columns}[c]
@@ -93,23 +94,25 @@
 Now I am going back to the previous slidesby clicking this: \hyperlink{Background}{go back}
 \end{frame}
  
-\begin{frame}{Econometric Model}
-$$
-y_{i}=\beta X_{t}+\gamma_{i} C_{it}
-$$
-\begin{itemize}
- \item $y_{t}$ is Rocky's run away times in week $t$
- \item $X_{t}$ is a dummy variable indicating the occurrence of the birth of his little brother, Vincent.
-    \begin{itemize}
-        \item $X=0$ is before his brother's birth (He is the single kid in his family)
-        \item $X=1$ is after his brother's birth (2-child family)
-    \end{itemize}
- \item $C_{i t}$ is control variables, i.e. average weekly hiking distances; frequency of dog park; Rocky's food in time $t$ 
+\begin{frame}{Introduction to GC in Java}
 
+\begin{itemize}
+ \item Java offers automatic memory management (a blessing and a curse)
+ \item GC is about finding objects no longer in use and reclaiming their memory
+ \item Simple reference counting is not enough, JVM searches the heap
+ \item Defragmentation  
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Overview of GC algorithms}
 
+  \begin{itemize}
+   \item All GC algorithms in Java split heap into different generations
+   
+  \end{itemize}
+
+\end{frame}
+  
 \section{Data}
 \begin{frame}{Data Source}
 His father's statistics
@@ -121,7 +124,7 @@ His father's statistics
 \section{Conclusion}
 \begin{frame}{Conclusion}
 \begin{itemize}
-    \item 
+    \item  abc
     \item  more info is in handbook of GC, new edition this year
 \end{itemize}
     
