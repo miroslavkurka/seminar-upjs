@@ -81,9 +81,9 @@
         \column{0.4\textwidth}
         \begin{itemize}
             \item JIT compiler bytecode
-            \item Stack: 
-            \item Method Area\footnote{excluded from GC}: 
-            \item \underline{Heap:} Objects goes here
+            \item Stack: each thread MCF\footnote{Method Call Frame}, local variables 
+            \item Method Area\footnote{excluded from GC}: Metaspace or PermGen (method bytecode, metadata, static variables)
+            \item \underline{Heap:} dynamically allocated objects
         \end{itemize} 
         \column{0.6\textwidth}
        
@@ -169,12 +169,12 @@
         \item (95 $\rightarrow$ 1.95\%)
         \item TGC will try to balance things out
     \end{itemize}
-    \begin{equation}
+    \begin{equation*}
 
         % TODO remove numbering 
         
          $TGoal = 1 - \frac{1}{1+GCTimeRatio}$
-    \end{equation}
+    \end{equation*}
 \end{frame}
 
 \begin{frame}
@@ -230,7 +230,7 @@
         \item Concurrent mode failure is expensive for CMS
         \item \texttt{-XX:CMSInitiatingOccupancyFraction=N}
         \item \texttt{-XX:+UseCMSInitiatingOccupancyOnly}
-        \item 
+        \item tells CMS at which \% of OG occupancy should background thread start
     \end{itemize}
 \end{frame}
 
